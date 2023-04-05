@@ -4,7 +4,9 @@ credentials = {"username": "example_user", "password": "example_password"}
 credentials_invalid = {"login": "example_usertt", "password": "example_passwordddd"}
 user_ids = ["3fa85f64-5717-4562-b3fc-2c963f66afa6", "3fa85f64-5717-4562-b3fc-2c963f66afa7"]
 user_ids_invalid = ["3fa85f64-5717-4562-b3fc-2c963f66afgbfbbfga6", "3fa85f64-5717-4562-b3fc-2c963f66afa7"]
-user_ids3 = ["3fa85f64-5717-4562-b3fc-2c963f66afa6", "3fa85f64-5717-4562-b3fc-2c963f66afa7", "3fa85f64-5717-4562-b3fc-2c963f66afa8"]
+user_ids3 = ["3fa85f64-5717-4562-b3fc-2c963f66afa6", "3fa85f64-5717-4562-b3fc-2c963f66afa7",
+             "3fa85f64-5717-4562-b3fc-2c963f66afa8"]
+
 
 def test_authentication_start_battle_end_battle():
     """
@@ -53,7 +55,6 @@ def test_start_with_invalid_user_count():
     response = requests.post(url="https://testers-task.omniversegames.ru/battle/start",
                              headers={"Authorization": "Bearer " + jwt_token}, json=data)
     assert response.status_code == 400
-    print("response.text", response.text)
 
 
 def test_end_battle_with_no_id():
